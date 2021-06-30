@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export const ShopItemFunc = ({item}) => {
     return (
@@ -11,9 +12,12 @@ export const ShopItemFunc = ({item}) => {
   <div class="highlight-window mobile"><div class="highlight-overlay"></div></div>
   <div class="divider"></div>
   <div class="purchase-info">
-    <div class="price"> {item.currency} + {item.price}</div>
+    <div class="price"> {item.currency} {item.price.toFixed(2)}</div>
     <button>Добавить в корзину</button>
   </div>
 </div>
     )
 }
+
+ShopItemFunc.propTypes = {
+    item: PropTypes.object }
